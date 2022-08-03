@@ -1,6 +1,6 @@
 syntax = "proto3";
 service NoteService {
-    rpc List (Empty) returns (NoteList) {}
+   rpc List (Empty) returns (NoteList) {}
 }
 message Empty {}
 message Note {

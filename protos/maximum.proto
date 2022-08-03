@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service MaxService {
+  rpc MaxArray (ArrayArguments) returns (Number) {}
+}
+
+message Number {
+  int32 number = 1;
+}
+
+message ArrayArguments {
+  repeated int32 numbers = 1;
+}
