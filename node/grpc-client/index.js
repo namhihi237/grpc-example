@@ -3,8 +3,8 @@ const grpc = require("@grpc/grpc-js");
 var protoLoader = require("@grpc/proto-loader");
 const app = express();
 
-const packageDefinition = protoLoader.loadSync('../protos/notes.proto');
-const maxDefinition = protoLoader.loadSync('../protos/maximum.proto');
+const packageDefinition = protoLoader.loadSync('../../protos/notes.proto');
+const maxDefinition = protoLoader.loadSync('../../protos/maximum.proto');
 const NoteService = grpc.loadPackageDefinition(packageDefinition).NoteService;
 const MaxService = grpc.loadPackageDefinition(maxDefinition).MaxService;
 
@@ -19,7 +19,6 @@ const maxClient = new MaxService(
   "localhost:50051",
   grpc.credentials.createInsecure()
 );
-
 
 app.get('/', (req, res) => {
   noteClient.list({}, (error, data) => {
