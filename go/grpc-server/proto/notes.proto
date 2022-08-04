@@ -1,0 +1,17 @@
+syntax = "proto3";
+package proto;
+option go_package = "./packets";
+service NoteService {
+   rpc List (Empty) returns (NoteList) {}
+}
+message Empty {}
+
+message Note {
+   string id = 1;
+   string title = 2;
+   string content = 3;
+}
+
+message NoteList {
+   repeated Note notes = 1;
+}
